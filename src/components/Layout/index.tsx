@@ -29,26 +29,30 @@ const Footer = styled.footer`
   justify-content: flex-end;
 `;
 
-const InnerDiv = styled.div<{ verticalCenter?: boolean }>`
+const InnerDiv = styled.div<{ verticalCenter?: boolean; noPadding?: boolean }>`
   display: flex;
   flex: 1;
   flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
   justify-content: ${(props) => (props.verticalCenter ? 'center' : 'start')};
+  padding: ${(props) => (props.noPadding ? 0 : '10px 30px')};
 `;
 
 interface ILayout {
   children?: React.ReactNode | React.ReactNodeArray;
   verticalCenter?: boolean;
+  noPadding?: boolean;
 }
-export const Layout = ({ children, verticalCenter }: ILayout) => {
+export const Layout = ({ children, verticalCenter, noPadding }: ILayout) => {
   return (
     <OuterDiv>
       <Header>
         <Logo>The Lorem</Logo>
       </Header>
-      <InnerDiv verticalCenter={verticalCenter}>{children}</InnerDiv>
+      <InnerDiv verticalCenter={verticalCenter} noPadding={noPadding}>
+        {children}
+      </InnerDiv>
       <Footer>
         <p>
           BY <Logo>Fred</Logo>
