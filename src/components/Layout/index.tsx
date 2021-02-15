@@ -40,12 +40,12 @@ const InnerDiv = styled.div<{ verticalCenter?: boolean; noPadding?: boolean }>`
   padding: ${(props) => (props.noPadding ? 0 : '10px 30px')};
 `;
 
-interface ILayout {
+export interface ILayoutProps {
   children?: React.ReactNode | React.ReactNodeArray;
   verticalCenter?: boolean;
   noPadding?: boolean;
 }
-export const Layout = ({ children, verticalCenter, noPadding }: ILayout) => {
+export const Layout = ({ children, verticalCenter, noPadding }: ILayoutProps) => {
   return (
     <OuterDiv>
       <Header>
