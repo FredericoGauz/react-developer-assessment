@@ -11,16 +11,17 @@ const HeaderTitle = styled.h1`
   font-family: 'Lora', serif;
   font-weight: 700;
   color: ${colors.blackGray};
-  font-size:4em;
+  font-size: 4em;
+  margin-top: 0;
 `;
 
 interface IInitialPage {}
 export const InitialPage = (props: IInitialPage) => {
-  const posts:IPost[] = data.posts;
+  const posts: IPost[] = data.posts;
   return (
     <Layout>
       <HeaderTitle>World News</HeaderTitle>
-      <PostList posts={posts.slice(0,12)} />
+      <PostList posts={posts.slice(0, 12)} />
     </Layout>
   );
 };
