@@ -4,7 +4,7 @@ import { IPostProps, Post } from './index';
 import { post } from '../../mock/post';
 
 export default {
-  title: 'Component/Posts/Post',
+  title: 'Components/Posts/Post',
   component: Post,
 } as Meta;
 
