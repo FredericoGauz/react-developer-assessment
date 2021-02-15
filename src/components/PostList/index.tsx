@@ -17,7 +17,7 @@ export const PostList = ({ posts }: IPostList) => {
   return (
     <List>
       {posts.map((post) => (
-        <Post />
+        <Post post={post} />
       ))}
     </List>
   );
