@@ -36,11 +36,10 @@ const Text = styled.summary`
   color: ${colors.darkGray};
 `;
 
-interface IPostProps {
-  post: IPost;
+export interface IPostProps extends IPost {
 }
-export const Post = ({ post }:IPostProps) => {
-  const {title, summary} = post;
+export const Post = (props:IPostProps) => {
+  const {title, summary} = props;
   return (
     <Card>
       <Title>
