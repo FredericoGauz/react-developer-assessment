@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { colors } from '../../styles/colors';
+import { Link } from '../Link';
 
 const OuterDiv = styled.div`
   display: flex;
@@ -48,7 +49,9 @@ export const Layout = ({ children, verticalCenter, noPadding }: ILayout) => {
   return (
     <OuterDiv>
       <Header>
-        <Logo>The Lorem</Logo>
+        <Logo>
+          <Link to="/">The Lorem</Link>
+        </Logo>
       </Header>
       <InnerDiv verticalCenter={verticalCenter} noPadding={noPadding}>
         {children}

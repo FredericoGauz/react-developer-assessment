@@ -1,7 +1,21 @@
-import { InitialPage } from "./InitialPage";
+import React from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { InitialPage } from './InitialPage';
+import { PostDetailPage } from './PostDetailPage';
 
 function App() {
-  return <InitialPage />;
+  return (
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/">
+          <InitialPage />
+        </Route>
+        <Route path="/post">
+          <PostDetailPage />
+        </Route>
+      </Switch>
+    </BrowserRouter>
+  );
 }
 
 export default App;

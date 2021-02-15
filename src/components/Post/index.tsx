@@ -2,6 +2,7 @@ import React from 'react';
 
 import styled from 'styled-components';
 import { colors } from '../../styles/colors';
+import { Link } from '../Link';
 
 const Card = styled.div`
   width: 300px;
@@ -13,6 +14,13 @@ const Title = styled.h1`
   font-family: 'Lora', serif;
   font-weight: 700;
   color: ${colors.blackGray};
+  transition: border ease-in-out 0.3s;
+  border-bottom: 3px solid transparent;
+
+  &:hover {
+    cursor: pointer;
+    border-bottom: 3px solid ${colors.accent};
+  }
 `;
 
 const Text = styled.p`
@@ -38,12 +46,17 @@ export const Post = (props: IPost) => {
   corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
   Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse
   quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo
-  voluptas nulla pariatur?`
+  voluptas nulla pariatur?`;
   return (
     <Card>
-      <Title>Main Title</Title>
+      <Title>
+        <Link to="/post">Main Title</Link>
+      </Title>
       <Text>
-        {text.slice(0,450)}...
+        {text.slice(0, 450)}
+        <span>
+          <Link to="/post">...</Link>
+        </span>
       </Text>
     </Card>
   );
