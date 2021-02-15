@@ -9,7 +9,7 @@ export const post: IPost = {
     explicabo.`,
   author: {
     name: 'Bunnie Mathey',
-    avatar: 'https://robohash.org/quamnonet.jpg?size=50x50&set=set1',
+    avatar: 'https://cdn.pixabay.com/photo/2021/01/17/09/11/woman-5924366_960_720.jpg?size=50x50',
   },
   publishDate: '2020-09-28T15:59:05Z',
   categories: [],

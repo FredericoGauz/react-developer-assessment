@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { colors } from '../../styles/colors';
 import { RelatedPosts } from '../RelatedPosts';
 import { post } from '../../mock/post';
-import { Author } from './Author';
+import { Author } from '../Author';
 
 const Card = styled.div`
   padding-left: 2em;
@@ -39,6 +39,12 @@ const Text = styled.p`
   color: ${colors.darkGray};
 `;
 
+const RelatedPostsWrapper = styled.div`
+  width: 80%;
+`;
+const AuthorWrapper = styled.div`
+  justify-content: center;
+`;
 interface IPostDetailPage {}
 export const PostDetailPage = (props: IPostDetailPage) => {
   const { title, summary, author, publishDate } = post;
@@ -47,12 +53,13 @@ export const PostDetailPage = (props: IPostDetailPage) => {
       <Card>
         <Title>{title}</Title>
         <Text>{summary}</Text>
-        <Author
-          author={author}
-          date={publishDate}
-        />
+        <AuthorWrapper>
+          <Author author={author} date={publishDate} />
+        </AuthorWrapper>
       </Card>
-      <RelatedPosts />
+      <RelatedPostsWrapper>
+        <RelatedPosts />
+      </RelatedPostsWrapper>
     </Layout>
   );
 };
