@@ -14,3 +14,9 @@ export const Default = Template.bind({});
 Default.args = {
   posts: [post, post, post],
 };
+export const Carousel = Template.bind({});
+
+Carousel.args = {
+  posts: [post, post, post],
+  carousel: true,
+};
