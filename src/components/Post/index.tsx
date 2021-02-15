@@ -7,8 +7,8 @@ import { Link } from '../Link';
 
 const Card = styled.div`
   width: 300px;
-  height: 300px;
-  padding: 10px;
+  height: 250px;
+  padding: 15px 10px;
 `;
 
 const Title = styled.h1`
@@ -17,6 +17,9 @@ const Title = styled.h1`
   color: ${colors.blackGray};
   transition: border ease-in-out 0.3s;
   border-bottom: 3px solid transparent;
+  text-transform: capitalize;
+  margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
 
   &:hover {
     cursor: pointer;
@@ -41,7 +44,7 @@ export const Post = ({ post }:IPostProps) => {
   return (
     <Card>
       <Title>
-        <Link to="/post">{prune(title, 40)}</Link>
+        <Link to="/post">{prune(title, 30)}</Link>
       </Title>
       <Text>
         {prune(summary, 450)}
