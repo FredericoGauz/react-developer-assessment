@@ -1,5 +1,7 @@
+import { InitialPage } from "./InitialPage";
+
 function App() {
-  return <div>App</div>;
+  return <InitialPage />;
 }
 
 export default App;
