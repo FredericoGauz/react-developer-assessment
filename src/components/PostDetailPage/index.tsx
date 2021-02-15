@@ -2,24 +2,26 @@ import React from 'react';
 import { Layout } from '../Layout';
 import styled from 'styled-components';
 import { colors } from '../../styles/colors';
+import { RelatedPosts } from '../RelatedPosts';
 
 const Card = styled.div`
-  width: 300px;
-  height: 300px;
+  padding-left: 15em;
+  padding-right: 15em;
 `;
 
 const Title = styled.h1`
   font-family: 'Lora', serif;
   font-weight: 700;
   color: ${colors.blackGray};
+  font-size:3em;
 `;
 
 const Text = styled.p`
   font-family: 'Roboto', serif;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.7em;
   text-align: justify;
-  font-size: small;
+  font-size: 1.2em;
   color: ${colors.darkGray};
 `;
 interface IPostDetailPage {}
@@ -44,6 +46,7 @@ export const PostDetailPage = (props: IPostDetailPage) => {
           qui dolorem eum fugiat quo voluptas nulla pariatur?
         </Text>
       </Card>
+      <RelatedPosts />
     </Layout>
   );
 };
