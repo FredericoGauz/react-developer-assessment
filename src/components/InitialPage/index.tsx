@@ -1,26 +1,17 @@
 import React from 'react';
 import { Layout } from '../Layout';
-import { Post } from '../Post';
 
 import data from '../../mock/data.json';
-import styled from 'styled-components';
+import { PostList } from '../PostList';
+import { IPost } from '../../types/post.interface';
 
-const PostList = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-`;
 
 interface IInitialPage {}
 export const InitialPage = (props: IInitialPage) => {
-  const posts = data.posts;
+  const posts:IPost[] = data.posts;
   return (
     <Layout>
-      <PostList>
-        {posts.slice(0,12).map((post) => (
-          <Post />
-        ))}
-      </PostList>
+      <PostList posts={posts.slice(0,12)} />
     </Layout>
   );
 };
