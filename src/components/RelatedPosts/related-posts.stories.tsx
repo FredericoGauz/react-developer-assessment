@@ -2,7 +2,7 @@ import { Meta, Story } from '@storybook/react';
 import { RelatedPosts } from '.';
 
 export default {
-  title: 'Component/Posts/Related Posts',
+  title: 'Components/Posts/Related Posts',
   component: RelatedPosts,
 } as Meta;
 

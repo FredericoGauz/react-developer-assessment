@@ -3,7 +3,7 @@ import { IPostListProps, PostList } from '.';
 import { post } from '../../mock/post';
 
 export default {
-  title: 'Component/Posts/PostList',
+  title: 'Components/Posts/PostList',
   component: PostList,
 } as Meta;
 
