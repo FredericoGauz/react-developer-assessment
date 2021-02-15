@@ -7,6 +7,7 @@ import { colors } from '../../styles/colors';
 const Wrapper = styled.div`
   margin-top: 2em;
   margin-bottom: 2em;
+  width: 100%;
 `;
 
 const CategoryTitle = styled.h1`
@@ -20,7 +21,7 @@ export const RelatedPosts = () => {
   return (
     <Wrapper>
       <CategoryTitle>You Might Also Like</CategoryTitle>
-      <PostList posts={data.posts.slice(0, 3)} />
+      <PostList posts={data.posts.slice(0, 3)} carousel/>
     </Wrapper>
   );
 };
