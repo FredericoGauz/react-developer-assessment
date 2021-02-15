@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { colors } from '../../styles/colors';
 
 const OuterDiv = styled.div`
   display: flex;
@@ -18,6 +19,7 @@ const Logo = styled.p`
   display: inline;
   font-family: 'Alegreya';
   font-weight: 900;
+  color: ${colors.blackGray};
 `;
 
 const Footer = styled.footer`

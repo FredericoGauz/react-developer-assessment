@@ -1,6 +1,7 @@
 import React from 'react';
 import { Layout } from '../Layout';
 import styled from 'styled-components';
+import { colors } from '../../styles/colors';
 
 const Card = styled.div`
   width: 300px;
@@ -10,6 +11,7 @@ const Card = styled.div`
 const Title = styled.h1`
   font-family: 'Lora', serif;
   font-weight: 700;
+  color: ${colors.blackGray};
 `;
 
 const Text = styled.p`
@@ -18,6 +20,7 @@ const Text = styled.p`
   line-height: 1.7em;
   text-align: justify;
   font-size: small;
+  color: ${colors.darkGray};
 `;
 interface IInitialPage {}
 export const InitialPage = (props: IInitialPage) => {
