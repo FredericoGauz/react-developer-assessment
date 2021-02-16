@@ -25,7 +25,7 @@ export const PostList = ({ posts, carousel }: IPostListProps) => {
   return (
     <DisplayList>
       {posts.map((post) => (
-        <Post {...post} />
+        <Post key={post.id} {...post} />
       ))}
     </DisplayList>
   );
