@@ -49,7 +49,7 @@ export const PostFilters = (props: IPostFiltersProps) => {
           }),
           multiValueLabel: (styles) => ({
             ...styles,
-            backgroundColor: '#6b4040',
+            backgroundColor: colors.lightAccent,
             color: 'white',
           }),
         }}
