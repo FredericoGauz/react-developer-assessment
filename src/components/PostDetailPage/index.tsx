@@ -8,7 +8,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { IPost } from '../../types/post.interface';
 
-const Card = styled.div`
+const Card = styled.article`
   padding-left: 2em;
   padding-right: 2em;
 

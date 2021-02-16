@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { colors } from '../../styles/colors';
 import { Link } from '../Link';
 
-const OuterDiv = styled.div`
+const OuterDiv = styled.main`
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;

@@ -4,7 +4,7 @@ import data from '../../mock/data.json';
 import styled from 'styled-components';
 import { colors } from '../../styles/colors';
 
-const Wrapper = styled.div`
+const Wrapper = styled.aside`
   margin-top: 2em;
   margin-bottom: 2em;
   width: 100%;
