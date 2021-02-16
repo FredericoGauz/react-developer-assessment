@@ -2,57 +2,32 @@
 
 ## Overview
 
-The purpose of this assessment is to demonstrate:
+Following up the exercise proposed I will write here a bit about what was done and why.
 
-1. An understanding of React syntax
-2. Working with an API
-3. Storing and manipulating React state
-4. Structuring an application with multiple components
-5. HTML and CSS ability
-6. Responsive web development ability
+The structure of the sample application is such:
 
-### Prerequisites
+1. A Sample Blog/News portal with the provided posts displaying in grid
+2. I added a simple details page for each post, this detail page uses an additional MirageJS route
+3. The posts can be filtered by category (I can add other types of filter, if needed) using the 'react-select' component with some custom styles and animation on.
+4. The posts and the detail page are fetched as usual with useEffect and then useState. I like using react-query but for the purpose of this exercise I went without that.
+5. I used axios for fetching the results instead of fetch or appsauce
+6. I decided to go for styled components as a CSS IN JS option
+7. I added Storybook and added some sample stories to a few components, due to time constrain, I couldn't add all.
+8. I chose to make a folder for each component (to hold specific things, stories, etc) and ended up using a 'index.ts{x}' to make imports easier. It does make a bit harder to switch tabs in vscode though.  
+9. I tried to keep the commit structure as simple as possible. It will be easy to follow my development story through my commits.
+## View
 
-In order to run the provided solution the following software will need to be installed:
+You can see the sample project **live** in this link[] and the **storybook** here[].
+### Missing
 
-- NodeJS (LTS) [here.](https://nodejs.org/en/)
-- A code editor (We recommend VS Code [here.](https://code.visualstudio.com/))
+Besides some easy to spot things, like proper handling different (loading, error) component states. I didn't persist the filter queries to the URI. I will do so if I manage to find some time.
 
-### Setup
 
-1. Fork and clone the repository or download and extract the ZIP file [here.](https://github.com/netconstruct/react-developer-assessment/archive/master.zip)
-2. Open the repository folder and install the dependencies using `yarn` or `npm install`.
-3. Run the development server using `yarn start` or `npm start`.
+### Other Notes
 
-The repository contains a `App.jsx` file inside the `components` folder; this should be the starting point for your exercise. Please feel free to create more components to structure your app in a logical manner.
+* Bumped `Create React App` to version @4.0.2 (actually only @4.0.1 was needed) to fix `#9869 Fix react-jsx error (@benneq)`
+    * Note: In a real production situation, where I would be working with a team,  I would not do something like that before discussing with them. I would do this to prevent possible breaking changes in the project I could not be aware of.
 
-The repository also contains an API endpoint mocked using MirageJS. This can be accessed when running the development server at the URL `/api/posts`.
+* [Git] I would usually push the commits much more frequently, but due to the nature of the exercise I decided to keep them local as much as possible.
 
-We would love to see code comments to help explain your approach and thought process, this will also be discussed in a follow-up technical interview.
-
-Finally, the use of third party libraries and/or components is permitted - and in some cases encouraged. However, please ensure that you are still demonstrating the skills we have outlined above.
-
-### Requirements
-
-These are the minimum requirements for the exercies:
-
-1. Retrieve the data from the mock API.
-1. Output the data in a list, including properties from the data that are appropriate for a list view.
-1. Implement a category filter - this can be single or multi-select.
-1. Implement pagination - this can be traditional numbered pages or "load more".
-1. Use semantic markup where possible.
-1. Create a responsive layout with HTML and CSS.
-
-### Additional Exercises
-
-If you have time then demonstrating any of the following would be considered as a bonus:
-
-1. Use client-side routing to create a "detail" page.
-1. Persist filter state in the query string.
-1. Include animated transitions between application state, e.g. when filtering.
-1. Convert the application to use TypeScript instead of JavaScript.
-1. Use a CSS preprocessor or CSS-in-JS rather than plain CSS.
-
-## Submission
-
-Please submit your completed exercise either by supplying the URL of your forked repository or by including a ZIP archive of your local folder - please ensure you **do not** include the `node_modules` folder.
+* I imported more then one font to try some styles out during dev.
