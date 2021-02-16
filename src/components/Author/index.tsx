@@ -3,13 +3,9 @@ import styled from 'styled-components';
 import { colors } from '../../styles/colors';
 import { IAuthor } from '../../types/author.interface';
 import { IPost } from '../../types/post.interface';
+import { friendlyDate } from '../../utils/utils';
 
-const dateFormatter = new Intl.DateTimeFormat([], {
-  year: 'numeric',
-  month: 'long',
-  day: 'numeric',
-  weekday: 'short',
-});
+
 
 
 const Wrapper = styled.div<{ reverse?: boolean }>`
@@ -61,7 +57,7 @@ const Avatar = styled.img`
 `;
 
 export const Author = ({ author, date, reverse }: IAuthorProps) => {
-  const displayDate = new Date(Date.parse(date));
+  
   return (
     <Wrapper reverse={reverse}>
       <AvatarWrapper reverse={reverse}>
@@ -69,7 +65,7 @@ export const Author = ({ author, date, reverse }: IAuthorProps) => {
       </AvatarWrapper>
       <Info>
         <Name>{author.name}</Name>
-        <DisplayDate>{dateFormatter.format(displayDate)}</DisplayDate>
+        <DisplayDate>{friendlyDate(date)}</DisplayDate>
       </Info>
     </Wrapper>
   );
