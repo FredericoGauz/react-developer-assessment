@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Layout } from '../Layout';
 import styled from 'styled-components';
 import { colors } from '../../styles/colors';
 import { RelatedPosts } from '../RelatedPosts';
-import { post } from '../../mock/post';
 import { Author } from '../Author';
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
+import { IPost } from '../../types/post.interface';
 
 const Card = styled.div`
   padding-left: 2em;
@@ -27,6 +29,7 @@ const Title = styled.h1`
   font-weight: 700;
   color: ${colors.blackGray};
   font-size: 3em;
+  text-transform: capitalize;
 `;
 
 const Text = styled.p`
@@ -50,6 +53,34 @@ const AuthorWrapper = styled.div`
 `;
 export interface IPostDetailPageProps {}
 export const PostDetailPage = (props: IPostDetailPageProps) => {
+  const [post, setPost] = useState<IPost|null>(null)
+  const [error, setError] = useState<string|null>(null)
+  const { id } = useParams<{id:string}>();
+  useEffect(() => {
+    let mounted = true;
+    const getPost = async (id:string) => {
+      try {
+        const uri = `/api/posts/${id}`;
+        const response = await axios.get(uri);
+        if (!response) return setError('Error fetching post.');
+        if (response.data.length <= 0 ) return setError('Post not found.');
+        const post = response.data[0];
+        if(mounted) setPost(post);
+      } catch (err) {
+        return console.warn('Error fetching post.', err);
+      }
+    };
+    getPost(id);
+    return () => {
+      mounted = false;
+    };
+  }, [id]);
+
+  //TODO Please remember that this is very primitive and would not be use on production
+  if(!id) return <div>404</div>;
+  if(!post) return <div>Loading...</div>;
+  if(error) return <div>{error}</div>;
+
   const { title, summary, author, publishDate } = post;
   return (
     <Layout>
@@ -57,7 +88,7 @@ export const PostDetailPage = (props: IPostDetailPageProps) => {
         <Title>{title}</Title>
         <Text>{summary}</Text>
         <AuthorWrapper>
-          <Author author={author} date={publishDate} reverse/>
+          <Author author={author} date={publishDate} reverse />
         </AuthorWrapper>
       </Card>
       <RelatedPostsWrapper>

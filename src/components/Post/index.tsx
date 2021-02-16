@@ -41,16 +41,16 @@ const Text = styled.summary`
 export interface IPostProps extends IPost {
 }
 export const Post = (props:IPostProps) => {
-  const {title, summary} = props;
+  const {id, title, summary} = props;
   return (
     <Card>
       <Title>
-        <Link to="/post">{prune(title, 30)}</Link>
+        <Link to={`/posts/${id}`}>{prune(title, 30)}</Link>
       </Title>
       <Text>
         {prune(summary, 450)}
         {summary.length > 450 && <span>
-          <Link to="/post">...</Link>
+          <Link to={`/posts/${id}`}>...</Link>
         </span>}
       </Text>
     </Card>

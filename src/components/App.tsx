@@ -10,7 +10,7 @@ function App() {
         <Route exact path="/">
           <InitialPage />
         </Route>
-        <Route path="/post">
+        <Route path="/posts/:id">
           <PostDetailPage />
         </Route>
       </Switch>
