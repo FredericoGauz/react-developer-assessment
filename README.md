@@ -17,7 +17,9 @@ The structure of the sample application is such:
 9. I tried to keep the commit structure as simple as possible. It will be easy to follow my development story through my commits.
 ## View
 
-You can see the sample project **live** in this link[] and the **storybook** here[].
+You can see the sample project **live** in this [react-developer-assessment.vercel.app/](https://react-developer-assessment.vercel.app/) and the **storybook** [here](https://react-developer-assessment-storybook.vercel.app/).
+
+`Please note that the storybook it is still in a very crude state.`
 ### Missing
 
 Besides some easy to spot things, like proper handling different (loading, error) component states. I didn't persist the filter queries to the URI. I will do so if I manage to find some time.
