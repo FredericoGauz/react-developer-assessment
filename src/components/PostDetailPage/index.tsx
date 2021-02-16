@@ -45,8 +45,8 @@ const RelatedPostsWrapper = styled.div`
 const AuthorWrapper = styled.div`
   justify-content: center;
 `;
-interface IPostDetailPage {}
-export const PostDetailPage = (props: IPostDetailPage) => {
+export interface IPostDetailPageProps {}
+export const PostDetailPage = (props: IPostDetailPageProps) => {
   const { title, summary, author, publishDate } = post;
   return (
     <Layout>
@@ -54,7 +54,7 @@ export const PostDetailPage = (props: IPostDetailPage) => {
         <Title>{title}</Title>
         <Text>{summary}</Text>
         <AuthorWrapper>
-          <Author author={author} date={publishDate} />
+          <Author author={author} date={publishDate} reverse/>
         </AuthorWrapper>
       </Card>
       <RelatedPostsWrapper>

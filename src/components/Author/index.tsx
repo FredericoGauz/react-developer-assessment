@@ -18,10 +18,10 @@ const Wrapper = styled.div<{ reverse?: boolean }>`
   flex-direction: ${(props) => (props.reverse ? 'row-reverse' : 'row')};
 `;
 
-const AvatarWrapper = styled.div`
+const AvatarWrapper = styled.div<{ reverse?: boolean }>`
   width: 40px;
-  margin-right: 1em;
-  margin-left: 1em;
+  margin-right: ${(props) => (!props.reverse ? '1em' : '0em')};
+  margin-left: ${(props) => (props.reverse ? '1em' : '0em')};
   display: flex;
   align-items: center;
 `;
