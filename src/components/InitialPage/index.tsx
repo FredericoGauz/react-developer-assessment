@@ -21,16 +21,17 @@ interface IInitialPage {}
 export const InitialPage = (props: IInitialPage) => {
   const [posts, setPosts] = useState<Array<IPost>>([]);
   const [filters, setFilters] = useState<Array<ICategory>>([]);
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
     let mounted = true;
     const fetchPosts = async () => {
       try {
-        const uri = `api/posts${filters.length > 0 ? '/?filters=' + filters.map(f => f.name).join(',') : ''}`;
+        const uri = `api/posts/?page=${page}${filters.length > 0 ? '&filters=' + filters.map(f => f.name).join(',') : ''}`;
         const response = await axios.get(uri);
         if (!response)
           return console.warn('Error fetching posts.', 'Empty response.');
-        if (mounted) setPosts(response.data.posts);
+        if (mounted) setPosts(response.data);
       } catch (err) {
         return console.warn('Error fetching posts.', err);
       }
@@ -39,7 +40,7 @@ export const InitialPage = (props: IInitialPage) => {
     return () => {
       mounted = false;
     };
-  }, [filters]);
+  }, [filters, page]);
 
   if (!posts)
     return (
