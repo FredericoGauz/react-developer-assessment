@@ -42,10 +42,10 @@ export const PostFilters = (props: IPostFiltersProps) => {
         isMulti
         components={animatedComponents}
         styles={{
-          control: () => ({
+          control: (provided, state) => ({
             display: 'flex',
             width: '80vw',
-            border: '2px solid' + colors.darkGray,
+            border: state.isFocused ? ('2px solid' + colors.accent) : ('2px solid' + colors.darkGray),
           }),
           multiValueLabel: (styles) => ({
             ...styles,
