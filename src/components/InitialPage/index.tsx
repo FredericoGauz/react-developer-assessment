@@ -15,8 +15,12 @@ const HeaderTitle = styled.h1`
   font-family: 'Lora', serif;
   font-weight: 700;
   color: ${colors.blackGray};
-  font-size: 4em;
+  font-size: 2.5em;
   margin-top: 0;
+
+  @media (min-width:768px) {
+    font-size: 4em;
+  }
 `;
 
 interface IInitialPage {}
