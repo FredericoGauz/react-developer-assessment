@@ -13,7 +13,7 @@ const ListCarousel = styled(List)`
   overflow-x: auto;
   flex-direction: column;
   width: 100%;
-  max-height: 500px;
+  max-height: 450px;
 `
 export interface IPostListProps {
   posts: IPost[];

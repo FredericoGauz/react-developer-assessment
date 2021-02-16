@@ -15,13 +15,22 @@ const dateFormatter = new Intl.DateTimeFormat([], {
 const Wrapper = styled.div<{ reverse?: boolean }>`
   display: flex;
   align-items: center;
+  @media (max-width: 640px) {
+    flex-direction: row;
+  }
   flex-direction: ${(props) => (props.reverse ? 'row-reverse' : 'row')};
+  margin-top: 1em;
+  margin-bottom: 1em;
 `;
 
 const AvatarWrapper = styled.div<{ reverse?: boolean }>`
   width: 40px;
-  margin-right: ${(props) => (!props.reverse ? '1em' : '0em')};
+  margin-right: ${(props) => (props.reverse ? '0em' : '1em')};
   margin-left: ${(props) => (props.reverse ? '1em' : '0em')};
+  @media (max-width: 640px) {
+    margin-right: 1em;
+    margin-left: 0em;
+  }
   display: flex;
   align-items: center;
 `;
@@ -37,7 +46,7 @@ const Name = styled.div`
 
 const DisplayDate = styled.div`
   font-size: 0.8em;
-  margin-top: 2px;
+  margin-top: 0.1em;
 `;
 
 export interface IAuthorProps {
@@ -55,7 +64,7 @@ export const Author = ({ author, date, reverse }: IAuthorProps) => {
   const displayDate = new Date(Date.parse(date));
   return (
     <Wrapper reverse={reverse}>
-      <AvatarWrapper>
+      <AvatarWrapper reverse={reverse}>
         <Avatar alt="avatar of author post" src={author.avatar} />
       </AvatarWrapper>
       <Info>

@@ -13,14 +13,14 @@ const OuterDiv = styled.div`
 
 const Header = styled.header`
   padding: 1em 2em;
-  height: 10vh;
 `;
 
 const Logo = styled.p`
-  display: inline;
   font-family: 'Alegreya';
   font-weight: 900;
   color: ${colors.blackGray};
+  margin: 0;
+  padding-left: 0.5em;
 `;
 
 const Footer = styled.footer`
@@ -40,6 +40,9 @@ const InnerDiv = styled.div<{ verticalCenter?: boolean; noPadding?: boolean }>`
   padding: ${(props) => (props.noPadding ? 0 : '10px 30px')};
 `;
 
+const CreditsWrapper = styled.p`
+  display: inline-flex;
+` 
 export interface ILayoutProps {
   children?: React.ReactNode | React.ReactNodeArray;
   verticalCenter?: boolean;
@@ -57,9 +60,9 @@ export const Layout = ({ children, verticalCenter, noPadding }: ILayoutProps) =>
         {children}
       </InnerDiv>
       <Footer>
-        <p>
+        <CreditsWrapper>
           BY <Logo>Fred</Logo>
-        </p>
+        </CreditsWrapper>
       </Footer>
     </OuterDiv>
   );

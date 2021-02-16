@@ -13,6 +13,8 @@ const Card = styled.div`
   @media (min-width: 768px) {
     padding-left: 6em;
     padding-right: 6em;
+    margin-top: 2em;
+    margin-bottom: 2em;
   }
   @media (min-width: 1024px) {
     padding-left: 15em;
@@ -37,6 +39,7 @@ const Text = styled.p`
     font-size: 1.2em;
   }
   color: ${colors.darkGray};
+  margin-bottom: 2em;
 `;
 
 const RelatedPostsWrapper = styled.div`

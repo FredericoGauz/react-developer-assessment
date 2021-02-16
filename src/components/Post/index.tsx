@@ -8,7 +8,7 @@ import { Link } from '../Link';
 const Card = styled.div`
   width: 300px;
   height: 250px;
-  padding: 15px 10px;
+  padding: 2em 1.2em;
 `;
 
 const Title = styled.h1`
@@ -20,6 +20,8 @@ const Title = styled.h1`
   text-transform: capitalize;
   margin-block-start: 0.5em;
   margin-block-end: 0.5em;
+  font-size: 1.8em;
+  line-height: 1.4em;
 
   &:hover {
     cursor: pointer;

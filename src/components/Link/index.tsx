@@ -4,7 +4,6 @@ import { colors } from '../../styles/colors';
 
 export const Link = styled(ReactRouterLink)`
     text-decoration: none;
-    color: ${colors.darkGray};
 
     &:focus, &:hover, &:visited, &:link, &:active {
         text-decoration: none;
