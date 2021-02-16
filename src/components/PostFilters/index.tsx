@@ -56,7 +56,7 @@ export const PostFilters = (props: IPostFiltersProps) => {
         className="basic-multi-select"
         classNamePrefix="select"
         name="categories"
-        placeholder="Choose One or More Categories"
+        placeholder="Filter by Category"
         onChange={(options) => {
           changeFilters(options);
         }}
