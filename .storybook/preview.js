@@ -4,4 +4,9 @@ export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
 }
 import '../src/styles/index.css';
+
+// Include mock API.
+import '../src/mock';
+
+//Include global decorators [Story Router,]
 addDecorator(StoryRouter());
