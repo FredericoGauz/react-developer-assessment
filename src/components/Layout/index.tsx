@@ -21,6 +21,7 @@ const Logo = styled.p`
   color: ${colors.blackGray};
   margin: 0;
   padding-left: 0.5em;
+  padding-top: 0.05em;
 `;
 
 const Footer = styled.footer`
@@ -40,7 +41,7 @@ const InnerDiv = styled.div<{ verticalCenter?: boolean; noPadding?: boolean }>`
   padding: ${(props) => (props.noPadding ? 0 : '10px 30px')};
 `;
 
-const CreditsWrapper = styled.p`
+const CreditsWrapper = styled.div`
   display: inline-flex;
 ` 
 export interface ILayoutProps {
