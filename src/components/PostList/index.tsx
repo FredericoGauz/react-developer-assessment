@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { IPost } from '../../types/post.interface';
 import { Post } from '../Post';
 
-//TODO[magic-value] = '500px'
+//[post-max-height] = '250px'
 const List = styled.div<{ noWrap?: boolean }>`
   display: flex;
   flex-wrap: ${(props) => (props.noWrap ? 'nowrap' : 'wrap')};
@@ -13,7 +13,7 @@ const ListCarousel = styled(List)`
   overflow-x: auto;
   flex-direction: column;
   width: 100%;
-  max-height: 450px;
+  max-height: 250px;
 `
 export interface IPostListProps {
   posts: IPost[];

@@ -9,7 +9,10 @@ import { friendlyDate } from '../../utils/utils';
 const Card = styled.article`
   width: 300px;
   height: 250px;
-  padding: 2em 1.2em;
+  padding: 1em 1.2em;
+  @media (min-width:768px) {
+    padding: 2em 1.2em;
+  }
   @keyframes slide-up {
     0% {
       opacity: 0;

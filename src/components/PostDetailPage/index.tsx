@@ -9,8 +9,8 @@ import axios from 'axios';
 import { IPost } from '../../types/post.interface';
 
 const Card = styled.article`
-  padding-left: 2em;
-  padding-right: 2em;
+  padding-left: 0em;
+  padding-right: 0em;
 
   @media (min-width: 768px) {
     padding-left: 6em;
@@ -28,8 +28,12 @@ const Title = styled.h1`
   font-family: 'Lora', serif;
   font-weight: 700;
   color: ${colors.blackGray};
-  font-size: 3em;
+  font-size: 1.5em;
   text-transform: capitalize;
+
+  @media (min-width: 768px) {
+    font-size: 3em;
+  }
 `;
 
 const Text = styled.p`
@@ -46,26 +50,29 @@ const Text = styled.p`
 `;
 
 const RelatedPostsWrapper = styled.div`
-  width: 80%;
+  width: 100%;
+  @media (min-width: 768px) {
+    width: 80%;
+  }
 `;
 const AuthorWrapper = styled.div`
   justify-content: center;
 `;
 export interface IPostDetailPageProps {}
 export const PostDetailPage = (props: IPostDetailPageProps) => {
-  const [post, setPost] = useState<IPost|null>(null)
-  const [error, setError] = useState<string|null>(null)
-  const { id } = useParams<{id:string}>();
+  const [post, setPost] = useState<IPost | null>(null);
+  const [error, setError] = useState<string | null>(null);
+  const { id } = useParams<{ id: string }>();
   useEffect(() => {
     let mounted = true;
-    const getPost = async (id:string) => {
+    const getPost = async (id: string) => {
       try {
         const uri = `/api/posts/${id}`;
         const response = await axios.get(uri);
         if (!response) return setError('Error fetching post.');
-        if (response.data.length <= 0 ) return setError('Post not found.');
+        if (response.data.length <= 0) return setError('Post not found.');
         const post = response.data[0];
-        if(mounted) setPost(post);
+        if (mounted) setPost(post);
       } catch (err) {
         return console.warn('Error fetching post.', err);
       }
@@ -77,9 +84,9 @@ export const PostDetailPage = (props: IPostDetailPageProps) => {
   }, [id]);
 
   //TODO Please remember that this is very primitive and would not be use on production
-  if(!id) return <div>404</div>;
-  if(!post) return <div>Loading...</div>;
-  if(error) return <div>{error}</div>;
+  if (!id) return <div>404</div>;
+  if (!post) return <div>Loading...</div>;
+  if (error) return <div>{error}</div>;
 
   const { title, summary, author, publishDate } = post;
   return (
